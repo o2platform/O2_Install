@@ -20,7 +20,7 @@ namespace O2.Platform
 		static GitHub_Actions()
 		{
 			LogMessage = (message) => Console.WriteLine("* " + message);
-			TargetDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\GitHub.Repositories");
+			TargetDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\GitHub.Repositories"));
 			GitUrl_Template = "git://github.com/o2platform/{0}.git";
 		}
 		
