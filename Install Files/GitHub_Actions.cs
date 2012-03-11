@@ -26,20 +26,9 @@ namespace O2.Platform
 		
 		public static void start()
 		{
-		
-			//var tempDir = @"C:\E_Drive\O2_Tests\O2_Launcher\_O2_TempDir\3-11-2012\_O2_Installer\Git_Clone_";
-			
-			
 			LogMessage(" in GitHub_Actions");
-						
-			//LogMessage("git : " + git.GetRepository());
-		//	CloneRepository(tempDir, gitUri);
-			CloneRepository("Scripts-by-O2-Users");
-			CloneRepository("O2-Platform-Scripts");
-			//CloneRepository("O2_Platform_ReferencedAssemblies");
-			
-			//LogMessage("DIR: " + TargetDir);
-		
+			CloneRepository("O2.Platform.Exe");
+			CloneRepository("O2-Platform-Scripts");		
 		}
 		
 		public static void CloneRepository(string repositoryName )
