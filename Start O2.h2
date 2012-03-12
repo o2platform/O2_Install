@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<H2>
+  <SourceCode>//var topPanel = O2Gui.open&lt;Panel&gt;("{name}",700,400);
+var currentFolder = PublicDI.CurrentScript.directoryName();
+var o2Exe = currentFolder.pathCombine(@"GitHub.Repositories\O2.Platform.Exe\O2 Platform.exe");
+Processes.startProcess(o2Exe);
+
+//O2Tag_DontAddExtraO2Files
+</SourceCode>
+  <ReferencedAssemblies />
+</H2>
