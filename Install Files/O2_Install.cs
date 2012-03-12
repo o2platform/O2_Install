@@ -15,7 +15,7 @@ namespace O2.Platform
 		{			
 			new Install_O2().start_Install_Workflow();
 			
-			System.Windows.Forms.MessageBox.Show("Thanks for Installing O2 .... now run 'Start O2.Bat'");
+			System.Windows.Forms.MessageBox.Show("Thanks for Installing O2 .... now run 'Start O2.h2'");
 		}
 	}
 	
