@@ -1,14 +1,18 @@
 <?xml version="1.0"?>
 <H2>
   <SourceCode>var topPanel = O2Gui.open&lt;Panel&gt;("Tool - Edit and Run O2_Install.cs file",1400,600);
+
 //var topPanel = panel.clear().add_Panel();
 topPanel.add_ConsoleOut();
 var codeViewer = topPanel.insert_Above().add_SourceCodeEditor(); 
 var codeViewer_2 = codeViewer.insert_Right().add_SourceCodeEditor(); 
-var file = @"C:\_WorkDir\Git_O2OPlatform\_O2_Platform_Source_Code\O2 Installer\Install Files\O2_Install.cs"; 
-var file2 = @"C:\_WorkDir\Git_O2OPlatform\_O2_Platform_Source_Code\O2 Installer\Install Files\GitHub_Actions.cs";
 
-var targetFolder = "_O2_Installer".tempDir(false);
+var targetFolder = PublicDI.CurrentScript.directoryName();
+var file = targetFolder.pathCombine("O2_Install.cs"); 
+var file2 = targetFolder.pathCombine("GitHub_Actions.cs");
+
+
+
 Action compileAndRun = 
 	()=&gt;{			
 			codeViewer.saveSourceCode();
@@ -18,7 +22,7 @@ Action compileAndRun =
 codeViewer.open(file);
 codeViewer_2.open(file2);
 codeViewer.insert_Above(20)
-		  .add_Link("Save, compiled and start process", compileAndRun);
+		  .add_Link("Save and compile and run", compileAndRun);
 //var compileFile = file.compileToExe("O2.Platform.Program",targetFolder);
 
 return targetFolder;
