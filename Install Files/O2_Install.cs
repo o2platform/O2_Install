@@ -27,11 +27,12 @@ namespace O2.Platform
 		public Install_O2()
 		{
 			//setting default values
-			InstallFiles = @"C:\_WorkDir\Git_O2OPlatform\_O2_Platform_Source_Code\O2 Installer\Install Files";			
-			
+			//InstallFiles = @"C:\_WorkDir\Git_O2OPlatform\_O2_Platform_Source_Code\O2 Installer\Install Files";			
+			InstallFiles = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);			
+			//Console.WriteLine(InstallFiles);			
 			LogMessage = (message) => Console.WriteLine("> " + message);
 			Misc_Helper_ExtensionMethods.LogMessage = LogMessage;
-		//	Console.ReadLine();		
+			//Console.ReadLine();		
 		}
 		
 		public Install_O2 start_Install_Workflow()

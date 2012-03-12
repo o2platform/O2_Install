@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Text;
 using NGit.Api;
+using O2.Kernel;
 //O2Ref:Ngit.dll
 //O2Ref:Sharpen.dll
 
@@ -20,7 +21,11 @@ namespace O2.Platform
 		static GitHub_Actions()
 		{
 			LogMessage = (message) => Console.WriteLine("* " + message);
-			TargetDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\GitHub.Repositories"));
+			var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+			if (baseDirectory.Contains("O2") == false)
+				baseDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+			TargetDir = Path.GetFullPath(Path.Combine(baseDirectory, "..\\GitHub.Repositories"));
+			//TargetDir = Path.GetFullPath(PublicDI.config.defaultO2LocalTempFolder.pathCombine( "..\\GitHub.Repositories"));
 			GitUrl_Template = "git://github.com/o2platform/{0}.git";
 		}
 		
