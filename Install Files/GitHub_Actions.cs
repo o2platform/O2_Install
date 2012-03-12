@@ -5,8 +5,8 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Text;
 using NGit.Api;
-//O2Ref:C:\_WorkDir\Git_O2OPlatform\_O2_Platform_Source_Code\O2 Installer\Install Files\Ngit.dll
-//O2Ref:C:\_WorkDir\Git_O2OPlatform\_O2_Platform_Source_Code\O2 Installer\Install Files\Sharpen.dll
+//O2Ref:Ngit.dll
+//O2Ref:Sharpen.dll
 
 namespace O2.Platform
 {  
@@ -40,6 +40,11 @@ namespace O2.Platform
 			if (Directory.Exists(repositoryPath))
 			{
 				git = Git.Open(repositoryPath);
+				LogMessage(" Pulling Repository: " + repositoryUrl);
+				LogMessage(" .. starting pull");
+				var pullResponse = git.Pull().Call();
+				LogMessage("    " + pullResponse.ToString());
+				LogMessage(" .. pull completed");
 			}
 			else
 			{
