@@ -28,7 +28,7 @@ namespace O2.Platform
 		{
 			LogMessage(" in GitHub_Actions");
 			CloneRepository("O2.Platform.Exe");
-			CloneRepository("O2-Platform-Scripts");		
+			CloneRepository("O2.Platform.Scripts");		
 		}
 		
 		public static void CloneRepository(string repositoryName )
