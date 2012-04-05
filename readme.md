@@ -17,4 +17,4 @@ There are lots of script samples at the [O2 Platform blog](http://o2platform.wor
 
 #O2 Website
 
-see also the [o2platform.com website](http://o2platform.com) page
+see also the [o2platform.com](http://o2platform.com) website
