@@ -1,2 +1,2 @@
 @echo off
-"O2.Platform.Projects\binaries\O2 Platform.exe"
+start "" "O2.Platform.Projects\binaries\O2 Platform.exe"
